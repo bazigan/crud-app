@@ -1,9 +1,9 @@
 services:
   crud-app:
-    image: bazigan/crudapp
     build:
       context: ./app
       dockerfile: Dockerfile
+    image: bazigan/crudapp
     init: true
     restart: always
     ports:
