@@ -32,4 +32,6 @@ app.use(function(req, res, next) {
 //  next(createError(404));
 });
 
+module.exports = app;
+
 app.listen(3000);
