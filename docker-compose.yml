@@ -1,0 +1,10 @@
+services:
+  crud-app:
+    image: bazigan/crudapp
+    build:
+      context: ./app
+      dockerfile: dockerfile
+    init: true
+    restart: always
+    ports:
+      - "3000:3000"
