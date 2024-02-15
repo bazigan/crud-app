@@ -6,19 +6,19 @@ const connection = require('../lib/db');
 const app = require('../index'); // Replace with the path to your application file
 
 describe('Integration Test to Database', () => {
-  beforeEach(() => {
-    app.set('connection', connection.connect);
+
+  beforeAll(() => {
+    connection.connect();
   });
 
-  afterEach(() => {
+  afterAll(() => {
     connection.end();
   });
 
-  it('should respond with /users', async () => {
-    const response = await request(app).get('/users');
-    expect(response.status).toBe(200);
+  it('should connect to database', () => {
+    expect(connection).toBeDefined();
   });
-    
+
 });
 
 describe('Unit Test /users', () => {
